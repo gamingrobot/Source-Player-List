@@ -48,7 +48,7 @@ if(!empty($server_info['players'])){
         $tempplayer['name']         = $player['name'];
         $tempplayer['steamid']      = $player['uniqueid'];
         $tempplayer['comid']        = getFriendId($player['uniqueid']);
-        $tempplayer['steamavatar']  = $player['steamavatar'];
+        $tempplayer['steamavatar']  = str_replace("_full","",$player['steamavatar']);
         $tempplayer['location']     = $player['cn'];
         array_push($players,$tempplayer);
     }

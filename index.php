@@ -4,71 +4,76 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<title>Player List</title>
 	<link rel="stylesheet" href="bootstrap.min.css">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
-  <script type="text/javascript" src="tinydropdown.js"></script>
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="tinydropdown.js"></script>
+    <script type="text/javascript" src="jquery.tablesorter.js"></script>
 </head>
 
 
 <body>
     <div class="container">
-		<h1>Player List</h1>
+        <h1>Player List</h1>
     
       <div class="row">
 				<table class="bordered-table zebra-striped">
 					<thead>
-						<tr id="menu" class="menu">
-                <th style="text-align:center" id="kalt">
-                <li><span class="main">CS:S</span>
-                    <ul class="submenu" onclick="this.style.display='none'; return false;">
-                        <li id="css_dust2"><span>24/7 =(eGO)= DUST2</span></li>
-                        <li id="css_office"><span>24/7 =(eGO)= OFFICE</span></li>
-                        <li id="css_italy"><span>24/7 =(eGO)= ITALY</span></li>
-                        <li id="css_dedust"><span>24/7 =(eGO)= DE_DUST</span></li>
-                        <li id="css_highschool"><span>24/7 =(eGO)= HIGHSCHOOL</span></li>
-                    </ul>
-                </li>
-                </th>
-                <th style="text-align:center" id="strand">
-                <li><span class="main">DOD:S</span>
-                    <ul class="submenu" onclick="this.style.display='none'; return false;">
-                        <li id="dod_anzio"><span>24/7 =(eGO)= ANZIO</span></li>
-                        <li id="dod_kalt"><span>24/7 =(eGO)= KALT</span></li>
-                        <li id="dod_strand"><span>24/7 =(eGO)= CHARLIE AKA STRAND</span></li>
-                        <li id="dod_ava"><span>24/7 =(eGO)= AVALANCHE</span></li>
-                        <li id="dod_donner"><span>24/7 =(eGO)= DONNER</span></li>
-                    </ul>
-                </li>
-                </th>
-                <th style="text-align:center" id="ava">
-                <li><span class="main">TF2</span>
-                    <ul class="submenu" onclick="this.style.display='none'; return false;">
-                        <li id="tf2_2fort"><span>24/7 =(eGO)= 2FORT</span></li>
-                        <li id="tf2_valve"><span>24/7 =(eGO)= VALVE MAPS</span></li>
-                        <li id="tf2_foundry"><span>24/7 =(eGO)= FOUNDRY</span></li>
-                        <li id="tf2_dust"><span>24/7 =(eGO)= DUSTBOWL</span></li>
-                    </ul>
-                </li>
-                </th>
-            <!-- <th style="text-align:center" id="kalt">CS:S</th>
-              <th style="text-align:center" id="strand">DOD:S</th>
-              <th style="text-align:center" id="ava">TF2</th>-->
-						</tr>
-					</thead>
+					<tr id="menu" class="menu">
+                    <th style="text-align:center" id="kalt">
+                    <li><span class="main">CS:S</span>
+                        <ul class="submenu" onclick="this.style.display='none'; return false;">
+                            <li id="css_dust2"><span>24/7 =(eGO)= DUST2</span></li>
+                            <li id="css_office"><span>24/7 =(eGO)= OFFICE</span></li>
+                            <li id="css_italy"><span>24/7 =(eGO)= ITALY</span></li>
+                            <li id="css_dedust"><span>24/7 =(eGO)= DE_DUST</span></li>
+                            <li id="css_highschool"><span>24/7 =(eGO)= HIGHSCHOOL</span></li>
+                        </ul>
+                    </li>
+                    </th>
+                    <th style="text-align:center" id="strand">
+                    <li><span class="main">DOD:S</span>
+                        <ul class="submenu" onclick="this.style.display='none'; return false;">
+                            <li id="dod_anzio"><span>24/7 =(eGO)= ANZIO</span></li>
+                            <li id="dod_kalt"><span>24/7 =(eGO)= KALT</span></li>
+                            <li id="dod_strand"><span>24/7 =(eGO)= CHARLIE AKA STRAND</span></li>
+                            <li id="dod_ava"><span>24/7 =(eGO)= AVALANCHE</span></li>
+                            <li id="dod_donner"><span>24/7 =(eGO)= DONNER</span></li>
+                        </ul>
+                    </li>
+                    </th>
+                    <th style="text-align:center" id="ava">
+                    <li><span class="main">TF2</span>
+                        <ul class="submenu" onclick="this.style.display='none'; return false;">
+                            <li id="tf2_2fort"><span>24/7 =(eGO)= 2FORT</span></li>
+                            <li id="tf2_valve"><span>24/7 =(eGO)= VALVE MAPS</span></li>
+                            <li id="tf2_foundry"><span>24/7 =(eGO)= FOUNDRY</span></li>
+                            <li id="tf2_dust"><span>24/7 =(eGO)= DUSTBOWL</span></li>
+                        </ul>
+                    </li>
+                    </th>
+				    </tr>
+				    </thead>
 				</table>
 		</div>
+        <div class="row" id="welcome">
+            <table class="bordered-table zebra-striped" id="data_table">
+                    <thead>
+                    <tr>
+                        <th><span id="welcome_message">Use the menu above to select a server to view players on the server</th>
+                    </tr>
+                </table>
+        </div>
 		<div style="display:none" class="row" id="player_div">
-				<table class="bordered-table zebra-striped">
+				<table class="bordered-table zebra-striped" id="data_table">
 					<thead id="player_head">
-          <tr>
-							<th colspan="5" style="border-bottom:1px solid #DDD" id="servername"></th>
-            </tr>
-						<tr id="player_titles">
-							<th>Name</th>
-                            <th>Steam ID</th>
-                            <th>Location</th>
-                            <th>View Profile</th>
-                            <th>Add Friend</th>
+                    <tr>
+				        <th colspan="5" style="border-bottom:1px solid #DDD"><span id="servername"></span> <a style="float:right" href="#" >Refresh </a></th>
+                    </tr>
+					<tr id="player_titles">
+						<th>Name</th>
+                        <th>Steam ID</th>
+                        <th>Location</th>
+                        <th>View Profile</th>
+                        <th>Add Friend</th>
 						</tr>
 					</thead>
 					<tbody id="player_table">
@@ -77,12 +82,13 @@
 			</div>
 	</div>
     
-        <script type="text/javascript">
+    <script type="text/javascript">
     $.ajaxSetup ({
 		cache: false
 	});
     var players;
     var serverinfo;
+    var tablebackup;
     //CSS SERVERS
     $("#css_dust2").click(function(){
         loadplayers("gaming_gameme_api.php?ip=174.36.42.204:27015");
@@ -129,8 +135,10 @@
         loadplayers("gaming_gameme_api.php?ip=64.150.186.180:27015");
     });
     function loadplayers(loadURL){
+        //$("#data_table").trigger("sorton", [[0,0]]);
         $("#player_div").show();
         $("#player_head").hide();
+        $("#welcome").hide();
         $("#player_table").html("<h2>Loading...</h2>");
         $.getJSON(
                 loadURL,
@@ -156,6 +164,9 @@
                                 '</tr>'
                             )
                         });
+                        tablebackup = $("#data_table").clone();
+                        resetTable();
+
                     }
                     else{
                         $("#player_head").show();
@@ -172,10 +183,30 @@
 
     </script>
     <script type="text/javascript">
+    //when updating the table call this function to clear the tablesorter data
+    function resetTable() {
+      tablebackup.clone().insertAfter("#data_table");
+      $("#data_table").remove();
+      $.tablesorter.defaults.sortList = [[0,0]]; 
+      $("#data_table").tablesorter({
+            headers: {
+                0: {
+                    sorter: false
+                },
+                4: {
+                    sorter: false
+                },
+                5: {
+                    sorter: false
+                }
+            }
+        });
+    }
 
-var dropdown=new TINY.dropdown.init("dropdown", {id:'menu', active:'menuhover'});
 
-</script>
+    var dropdown=new TINY.dropdown.init("dropdown", {id:'menu', active:'menuhover'});
+
+    </script>
 
 </body>
 </html>
