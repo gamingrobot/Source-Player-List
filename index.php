@@ -9,6 +9,7 @@
 
 </head>
 
+
 <body>
     <div class="container">
 		<h1>Player List</h1>
@@ -75,6 +76,7 @@
 				</table>
 			</div>
 	</div>
+    
         <script type="text/javascript">
     $.ajaxSetup ({
 		cache: false
