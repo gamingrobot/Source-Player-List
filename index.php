@@ -92,9 +92,9 @@
     //CSS SERVERS
     servers['css_dust2']        = '174.36.42.204';
     servers['css_office']       = '174.36.42.205';
-    servers['css_italy']        = '75.126.144.83';
-    servers['css_dedust']       = '75.126.144.82';
-    servers['css_highschool']   = '75.126.144.80';
+    servers['css_italy']        = '184.173.227.127';
+    servers['css_dedust']       = '184.173.227.126';
+    servers['css_highschool']   = '184.173.227.124';
     //DOD SERVERS
     servers['dod_anzio']        = '72.233.123.6';
     servers['dod_kalt']         = '72.233.123.5';
