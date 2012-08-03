@@ -113,14 +113,19 @@
     //if(window.location.hash) {
     //    var hashserver = window.location.hash.substring(1);
     //    loadplayers(apiurl + "?ip=" + servers[hashserver] + ":" + serverport, hashserver);
-    //} 
+    //}
 
     $(window).hashchange( function(){
         if(window.location.hash) {
             var hash = location.hash;       
             // Set the page title based on the hash.
             hashserver = hash.replace( /^#/, '' );
-            loadplayers(apiurl + "?ip=" + servers[hashserver] + ":" + serverport, hashserver);
+            if (hashserver in servers){ 
+                loadplayers(apiurl + "?ip=" + servers[hashserver] + ":" + serverport);
+            }
+            else {
+                loadplayers(apiurl + "?ip=" + hashserver);
+            }
         }
         else {
 
@@ -137,8 +142,7 @@
     var players;
     var serverinfo;
     var tablebackup;
-    function loadplayers(loadURL, servertag){
-        //window.location.hash = servertag;
+    function loadplayers(loadURL){
         $("#player_div").show();
         $("#player_head").hide();
         $("#welcome").hide();
