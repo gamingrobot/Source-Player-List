@@ -31,31 +31,42 @@ try {
     die ("Client API Serverinfo Error: ".$e->getMessage()."\n");
 }
 
-$server_info = $tempserver_info['serverinfo'][0];
-
-$return_serverinfo['addr']  = $server_info['addr'];
-$return_serverinfo['port']  = $server_info['port'];
-$return_serverinfo['game']  = $server_info['game'];
-$return_serverinfo['name']  = $server_info['name'];
-$return_serverinfo['map']   = $server_info['map'];
-$return_info['serverinfo'] = $return_serverinfo;
-
-$players = array();
-if(!empty($server_info['players'])){
-    foreach($server_info['players'] as $player){
-        $tempplayer = array();
-        $tempplayer['id']           = $player['id'];
-        $tempplayer['name']         = $player['name'];
-        $tempplayer['steamid']      = $player['uniqueid'];
-        $tempplayer['comid']        = getFriendId($player['uniqueid']);
-        $tempplayer['steamavatar']  = str_replace("_full","",$player['steamavatar']);
-        $tempplayer['location']     = $player['cn'];
-        array_push($players,$tempplayer);
-    }
-    $return_info['players'] = $players;
-}
-else{
+if($tempserver_info['serverinfo'] == null){
+    $return_serverinfo['name']  = "Server Not Found";
+    $return_info['serverinfo'] = $return_serverinfo;
     $return_info['players'] = 0;
+}
+else {
+    $server_info = $tempserver_info['serverinfo'][0];
+    $return_serverinfo['addr']  = $server_info['addr'];
+    $return_serverinfo['port']  = $server_info['port'];
+    $return_serverinfo['game']  = $server_info['game'];
+    $return_serverinfo['name']  = $server_info['name'];
+    $return_serverinfo['map']   = $server_info['map'];
+    $return_info['serverinfo'] = $return_serverinfo;
+
+    $players = array();
+    if(!empty($server_info['players'])){
+        foreach($server_info['players'] as $player){
+            $tempplayer = array();
+            $tempplayer['id']           = $player['id'];
+            $tempplayer['name']         = $player['name'];
+            $tempplayer['steamid']      = $player['uniqueid'];
+            $tempplayer['comid']        = getFriendId($player['uniqueid']);
+            $tempplayer['steamavatar']  = str_replace("_full","",$player['steamavatar']);
+            if ($player['cn'] === ""){
+                $tempplayer['location'] = "Unknown";
+            }
+            else {
+                $tempplayer['location']     = $player['cn'];
+            }
+            array_push($players,$tempplayer);
+        }
+        $return_info['players'] = $players;
+    }
+    else{
+        $return_info['players'] = 0;
+    }
 }
 //print_r($return_info);
 

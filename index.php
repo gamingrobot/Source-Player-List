@@ -152,6 +152,7 @@
                 function(json) {
                     //alert(json.addr);
                     serverinfo = json.serverinfo;
+                    console.log(serverinfo);
                     players = json.players;
                     $("#player_table").html("");
                     $("#servername").html(serverinfo.name);
