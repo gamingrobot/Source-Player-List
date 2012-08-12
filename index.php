@@ -50,6 +50,7 @@
                             <li id="tf2_foundry"    onclick="window.location.hash='tf2_foundry';"><span>24/7 =(eGO)= FOUNDRY</span></li>
                             <li id="tf2_dust"       onclick="window.location.hash='tf2_dust';"><span>24/7 =(eGO)= DUSTBOWL</span></li>
                             <li id="tf2_doom"      onclick="window.location.hash='tf2_doom';"><span>24/7 =(eGO)= DOOMSDAY</span></li>
+                            <li id="tf2_pl"      onclick="window.location.hash='tf2_pl';"><span>24/7 =(eGO)= PAYLOAD</span></li>
                         </ul>
                     </li>
                     </th>
@@ -107,6 +108,7 @@
     servers['tf2_foundry']      = '68.232.161.203';
     servers['tf2_dust']         = '64.150.186.180';
     servers['tf2_doom']        = '68.232.160.125';
+    servers['tf2_pl']        = '68.168.100.16';
 
 
     //do page load stuff
