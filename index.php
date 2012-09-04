@@ -97,9 +97,9 @@
     servers['css_dedust']       = '184.173.227.126';
     servers['css_highschool']   = '184.173.227.124';
     //DOD SERVERS
-    servers['dod_anzio']        = '72.233.123.6';
-    servers['dod_kalt']         = '72.233.123.5';
-    servers['dod_strand']       = '72.233.123.3';
+    servers['dod_anzio']        = '174.36.38.44';
+    servers['dod_kalt']         = '174.36.38.43';
+    servers['dod_strand']       = '174.36.38.42';
     servers['dod_ava']          = '67.228.175.242';
     servers['dod_donner']       = '67.228.175.243';
     //TF2 SERVERS
