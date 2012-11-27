@@ -21,13 +21,12 @@
 					<thead>
 					<tr id="menu" class="menu">
                     <th style="text-align:center" id="kalt">
-                    <li><span class="main">CS:S</span>
+                    <li><span class="main">CS</span>
                         <ul class="submenu" onclick="this.style.display='none'; return false;">
-                            <li id="css_dust2"      onclick="window.location.hash='css_dust2';"><span>24/7 =(eGO)= DUST2</span></li>
-                            <li id="css_office"     onclick="window.location.hash='css_office';"><span>24/7 =(eGO)= OFFICE</span></li>
-                            <li id="css_italy"      onclick="window.location.hash='css_italy';"><span>24/7 =(eGO)= ITALY</span></li>
-                            <li id="css_dedust"     onclick="window.location.hash='css_dedust';"><span>24/7 =(eGO)= DE_DUST</span></li>
-                            <li id="css_highschool" onclick="window.location.hash='css_highschool';"><span>24/7 =(eGO)= HIGHSCHOOL</span></li>
+                            <li id="css_dust2"      onclick="window.location.hash='css_dust2';"><span>CS:S 24/7 =(eGO)= DUST2</span></li>
+                            <li id="css_office"     onclick="window.location.hash='css_office';"><span>CS:S 24/7 =(eGO)= OFFICE</span></li>
+                            <li id="css_italy"      onclick="window.location.hash='css_italy';"><span>CS:S 24/7 =(eGO)= ITALY</span></li>
+                            <li id="css_highschool" onclick="window.location.hash='css_highschool';"><span>CS:S 24/7 =(eGO)= HIGHSCHOOL</span></li>
                         </ul>
                     </li>
                     </th>
@@ -45,12 +44,13 @@
                     <th style="text-align:center" id="ava">
                     <li><span class="main">TF2</span>
                         <ul class="submenu" onclick="this.style.display='none'; return false;">
+                            <li id="tf2_pl"      onclick="window.location.hash='tf2_pl';"><span>24/7 =(eGO)= PAYLOAD</span></li>
                             <li id="tf2_2fort"      onclick="window.location.hash='tf2_2fort';"><span>24/7 =(eGO)= 2FORT</span></li>
                             <li id="tf2_valve"      onclick="window.location.hash='tf2_valve';"><span>24/7 =(eGO)= VALVE MAPS</span></li>
-                            <li id="tf2_foundry"    onclick="window.location.hash='tf2_foundry';"><span>24/7 =(eGO)= FOUNDRY</span></li>
                             <li id="tf2_dust"       onclick="window.location.hash='tf2_dust';"><span>24/7 =(eGO)= DUSTBOWL</span></li>
-                            <li id="tf2_doom"      onclick="window.location.hash='tf2_doom';"><span>24/7 =(eGO)= DOOMSDAY</span></li>
-                            <li id="tf2_pl"      onclick="window.location.hash='tf2_pl';"><span>24/7 =(eGO)= PAYLOAD</span></li>
+                            <li id="tf2_foundry"    onclick="window.location.hash='tf2_foundry';"><span>24/7 =(eGO)= FOUNDRY</span></li>
+                            <li id="tf2_cp"      onclick="window.location.hash='tf2_cp';"><span>24/7 =(eGO)= CP ROATION</span></li>
+                            <li id="tf2_harvest"      onclick="window.location.hash='tf2_harvest';"><span>24/7 =(eGO)= HARVEST</span></li>
                         </ul>
                     </li>
                     </th>
@@ -84,31 +84,43 @@
 					</tbody>
 				</table>
 			</div>
+        <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-2409983284615482";
+        /* playerlist.gamingrobot.net */
+        google_ad_slot = "6897402708";
+        google_ad_width = 728;
+        google_ad_height = 90;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
 	</div>
     
     <script type="text/javascript">
-    var serverport = "27015";
+    //var serverport = "27015";
     var apiurl = "gaming_gameme_api.php"
     var servers = new Array();
     //CSS SERVERS
-    servers['css_dust2']        = '174.36.42.204';
-    servers['css_office']       = '174.36.42.205';
-    servers['css_italy']        = '184.173.227.127';
-    servers['css_dedust']       = '184.173.227.126';
-    servers['css_highschool']   = '184.173.227.124';
+    servers['css_dust2']        = '174.36.42.204:27015';
+    servers['css_office']       = '174.36.42.205:27015';
+    servers['css_italy']        = '184.173.227.127:27015';
+    servers['css_highschool']   = '184.173.227.124:27015';
     //DOD SERVERS
-    servers['dod_anzio']        = '174.36.38.44';
-    servers['dod_kalt']         = '174.36.38.43';
-    servers['dod_strand']       = '174.36.38.42';
-    servers['dod_ava']          = '67.228.175.242';
-    servers['dod_donner']       = '67.228.175.243';
+    servers['dod_anzio']        = '174.36.38.44:27015';
+    servers['dod_kalt']         = '174.36.38.43:27015';
+    servers['dod_strand']       = '174.36.38.42:27015';
+    servers['dod_ava']          = '67.228.175.242:27015';
+    servers['dod_donner']       = '67.228.175.243:27015';
     //TF2 SERVERS
-    servers['tf2_2fort']        = '69.64.95.111';
-    servers['tf2_valve']        = '64.150.183.207';
-    servers['tf2_foundry']      = '68.232.161.203';
-    servers['tf2_dust']         = '64.150.186.180';
-    servers['tf2_doom']        = '68.232.160.125';
-    servers['tf2_pl']        = '68.168.100.16';
+    servers['tf2_pl']           = '68.168.100.16:27015';
+    servers['tf2_2fort']        = '69.64.95.111:27015';
+    servers['tf2_valve']        = '64.150.183.207:27015';
+    servers['tf2_dust']         = '64.150.186.180:27015';
+    servers['tf2_foundry']      = '68.232.161.203:27015';
+    servers['tf2_cp']           = '68.232.160.125:27015';
+    servers['tf2_harvest']      = '67.228.175.240:27015';
+
 
 
     //do page load stuff
@@ -123,7 +135,9 @@
             // Set the page title based on the hash.
             hashserver = hash.replace( /^#/, '' );
             if (hashserver in servers){ 
-                loadplayers(apiurl + "?ip=" + servers[hashserver] + ":" + serverport);
+                //loadplayers(apiurl + "?ip=" + servers[hashserver] + ":" + serverport);
+                loadplayers(apiurl + "?ip=" + servers[hashserver]);
+
             }
             else {
                 loadplayers(apiurl + "?ip=" + hashserver);
